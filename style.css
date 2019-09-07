@@ -1,0 +1,15 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: rgb(206, 199, 199);
+}
+
+
+#blockMove {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background: rgb(206, 199, 199);
+    border: 2px solid black;
+    margin: 234px 550px;
+}
