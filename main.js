@@ -1,7 +1,6 @@
-var container= document.getElementById("container");
+let container= document.getElementById("container");
 
-
-var blockMove =
+let blockMove =
       `<div id="blockMove">
             <button onclick="moveLeft()">Left</button>
             <button onclick="moveRight()">Right</button>
@@ -10,27 +9,32 @@ var blockMove =
       </div>`;
 
 container.innerHTML += blockMove;
+let blockMoveElem = document.getElementById("blockMove");   
+let rect = blockMoveElem.getBoundingClientRect();
+console.log(rect);
 
 
 function moveRight() {
-      var elem = document.getElementById("blockMove");   
-      var pos = 0;
-      var id = setInterval(frame, 10);
-      function frame() {
-        if (pos == 540) {
-          clearInterval(id);
-        } else {
-          pos++; 
-          elem.style.left = `${pos}px`;
-        }
-      }
+  setBasePosition();
+  let elem = document.getElementById("blockMove");   
+  let pos = 0;
+  let id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 540) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.left = `${pos}px`;
+    }
+  }
 }
 
 
 function moveLeft() {
-  var elem = document.getElementById("blockMove");   
-  var pos = 0;
-  var id = setInterval(frame, 10);
+  setBasePosition();
+  let elem = document.getElementById("blockMove");   
+  let pos = 0;
+  let id = setInterval(frame, 10);
   function frame() {
     if (pos == -540) {
       clearInterval(id);
@@ -42,34 +46,39 @@ function moveLeft() {
 }
 
 function moveUp() {
-      var elem = document.getElementById("blockMove");   
-      var pos = 0;
-      var id = setInterval(frame, 10);
-      function frame() {
-        if (pos == -230) {
-          clearInterval(id);
-        } else {
-          pos--; 
-          elem.style.top = `${pos}px`; 
-        }
-      }
+  setBasePosition();
+  let elem = document.getElementById("blockMove");   
+  let pos = 0;
+  let id = setInterval(frame, 10);
+  function frame() {
+    if (pos == -230) {
+      clearInterval(id);
+    } else {
+      pos--; 
+      elem.style.top = `${pos}px`; 
+    }
+  }
 }
 
 function moveDown() {
-      var elem = document.getElementById("blockMove");   
-      var pos = 0;
-      var id = setInterval(frame, 10);
-      function frame() {
-        if (pos == 230) {
-          clearInterval(id);
-        } else {
-          pos++; 
-          elem.style.top = `${pos}px`; 
-        }
-      }
+  setBasePosition();
+  let elem = document.getElementById("blockMove");   
+  let pos = 0;
+  let id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 230) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = `${pos}px`; 
+    }
+  }
 }
 
-
+function setBasePosition() {
+  document.getElementById("blockMove").style.left = `0px`;
+  document.getElementById("blockMove").style.top = `0px`;
+}
 
 
 
